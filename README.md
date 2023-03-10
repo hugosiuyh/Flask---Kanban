@@ -11,6 +11,10 @@ The app is modeled after and reuses code from this Flask tutorial:
 - User can create tasks, update tasks to put into different sections, and delete tasks
 - Users have access to toehri own task boards and managed thorugh username and password login
 
+## Screenrecording 
+https://www.loom.com/share/6f905a829f4a4cf4ae716e6d4c351995
+
+
 # Getting Started
 
 Clone the repository:
