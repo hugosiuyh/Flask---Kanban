@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Tasks{% endblock %}</h1>
+{% endblock %}
+
+{% block body %}
+<form method="POST">
+    <label for="title">Title</label>
+    <input name="title" id="title" value="{{ task['title'] }}" required>
+    <label for="body">Body</label>
+    <textarea name="body" id="body">{{ task['body'] }}</textarea>
+    <div class="dropdown">
+        <label for="body">Section</label>
+        <select name="section" id="section" required>
+          {% set selected_option = task['section'] %}
+          {% for option in ['to_do', 'in_progress', 'finished'] %}
+              <option value="{{ option }}" {% if option == selected_option %}selected{% endif %}>{{ option }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <p> </p>
+    <input type="submit" value="Save">
+  </form>
+{% endblock %}

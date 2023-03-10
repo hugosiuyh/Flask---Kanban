@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Tasks{% endblock %}</h1>
+{% endblock %}
+
+{% block body %}
+<h1 style="text-align: center">Create New Task</h1>
+<form method="POST" style="text-align: center">
+    <label for="title">Title</label>
+    <input name="title" id="title" value="{{ request.form['title'] }}" required>
+    <label for="body">Body</label>
+    <textarea name="body" id="body">{{ request.form['body'] }}</textarea>
+    <div class="dropdown">
+        <label for="body">Section</label>
+        <select name="section" id="section" required>
+            <option value="to_do">To do</option>
+            <option value="in_progress">In progress</option>
+            <option value="finished">Finished</option>
+        </select>
+      </div>
+      <p></p>
+    <input type="submit" value="Save">
+  </form>
+{% endblock %}

@@ -1,0 +1,135 @@
+html { font-family: Helvetica; background: #eee; padding: 1rem; }
+h1 { font-family: Helvetica; color: #377ba8; margin: 1rem 0; }
+a { color: #377ba8; }
+hr { border: none; border-top: 1px solid lightgray; }
+nav { background: lightgray; display: flex; align-items: center; padding: 0 0.5rem; }
+nav h1 { flex: auto; margin: 0; }
+nav h1 a { text-decoration: none; padding: 0.25rem 0.5rem; }
+nav ul  { display: flex; list-style: none; margin: 0; padding: 0; }
+nav ul li a, nav ul li span, header .action { display: block; padding: 0.5rem; }
+.content {display: table; margin-left: auto; margin-right: auto;}
+.flash { margin: 1em 0; padding: 1em; background: #cae6f6; border: 1px solid #377ba8; }
+.post > header { display: flex; align-items: flex-end; font-size: 0.85em; }
+.post > header > div:first-of-type { flex: auto; }
+.post > header h1 { font-size: 1.5em; margin-bottom: 0; }
+.post .about { color: slategray; font-style: italic; }
+.post .body { white-space: pre-line; }
+.content:last-child { margin-bottom: 0; }
+.content form { margin: 1em 0; display: flex; flex-direction: column; }
+.content label { font-weight: bold; margin-bottom: 0.5em; }
+.content input, .content textarea { margin-bottom: 1em; }
+.content textarea {
+  width: 300px;
+  height: 150px;
+}
+input.danger { color: #cc2f2e; }
+input[type=submit] { align-self: start; min-width: 10em; }
+input[type=register] { align-self: start; min-width: 10em; }
+table {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    background-color: #f2f2f2;
+  }
+table {
+border-collapse: collapse;
+border: 1px solid #ccc;
+}
+
+td, th {
+border: 1px solid #ccc;
+padding: 8px;
+}
+tr:nth-child(even) {
+background-color: #f9f9f9;
+}
+tr:hover {
+    background-color: #e0e0e0;
+}
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #fff;
+  }
+  
+  /* Set a different background color for the header */
+hr {
+background-color: #ff6347;
+color: #fff;
+padding: 10px;
+}
+
+/* Style the navigation links */
+nav a {
+display: inline-block;
+color: #fff;
+text-decoration: none;
+padding: 10px;
+margin-right: 10px;
+background-color: #333;
+border-radius: 5px;
+}
+
+nav a:hover {
+background-color: #ff6347;
+}
+
+/* Style the main content area */
+main {
+padding: 20px;
+}
+form {
+    margin-bottom: 20px;
+}
+  
+label {
+display: block;
+margin-bottom: 5px;
+color: #333;
+}
+  
+input[type="text"], input[type="email"], input[type="password"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="submit"] {
+display: inline-block;
+background-color: #527ed0;
+color: #fff;
+padding: 10px 20px;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+}
+
+input[type="submit"]:hover {
+background-color: #355da7;
+}
+
+.button {
+  display: inline-block;
+  background-color: #2aaaa8;
+  color: #fff;
+  padding: 10px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  }
+  
+.button:hover {
+background-color: #2d8382;;
+}
+
+/* Style the error messages */
+.error {
+color: #e74c3c;
+margin-bottom: 10px;
+}
+.flash-message {
+  color: rgba(240, 67, 15, 0.564);
+  font-weight: bold;
+}

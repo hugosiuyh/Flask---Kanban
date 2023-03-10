@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Tasks{% endblock %}</h1>
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1 style="text-align: center">Tasks</h1>
+    {% if to_do|length < 1 and in_progress|length < 1 and finished|length < 1%}
+    <h4 style="text-align: center">There are no tasks. Create one below!</h4>
+    {% else %}
+    <form action="/placeholder" method="post">
+      <div class="board">
+         <div class = "board__column">
+          <div class = "board__column-title"><h3>To do<h3></div>
+          <div class = "board__column-items">
+            <table>
+              <tr>
+                  <th>Task Name</th>
+                  <th>Task Details</th>
+                  <th>Date Added</th>
+              </tr>
+              {% for todo in to_do %}
+                  <tr>
+                      <td>{{ todo['title'] }}</td>
+                      <td>{{ todo['body'] }}</td>
+                      <td>{{ todo['created'] }}</td>
+                      <td>
+                          <a href="/main/delete/{{todo.id}}">Delete</a>
+                          <br>
+                          <a href="/main/update/{{todo.id}}">Update</a>
+                      </td>
+                  </tr>
+              {% endfor %}
+          </table>
+          <div class = "board__column">
+           <div class = "board__column-title"><h3>In progress<h3></div>
+           <div class = "board__column-items">
+            <table>
+              <tr>
+                <th>Task Name</th>
+                <th>Task Details</th>
+                <th>Date Added</th>
+              </tr>
+              {% for inprogress in in_progress %}
+                  <tr>
+                      <td>{{ inprogress['title'] }}</td>
+                      <td>{{ inprogress['body'] }}</td>
+                      <td>{{ inprogress['created'] }}</td>
+                      <td>
+                          <a href="/main/delete/{{inprogress.id}}">Delete</a>
+                          <br>
+                          <a href="/main/update/{{inprogress.id}}">Update</a>
+                      </td>
+                  </tr>
+              {% endfor %}
+          </table>
+          <div class = "board__column">
+           <div class = "board__column-title"><h3>Finished<h3></div>
+           <div class = "board__column-items">
+            <table>
+              <tr>
+                <th>Task Name</th>
+                <th>Task Details</th>
+                <th>Date Added</th>
+              </tr>
+              {% for finish in finished %}
+                  <tr>
+                      <td>{{ finish['title'] }}</td>
+                      <td>{{ finish['body'] }}</td>
+                      <td>{{ finish['created'] }}</td>
+                      <td>
+                          <a href="/main/delete/{{finish.id}}">Delete</a>
+                          <br>
+                          <a href="/main/update/{{finish.id}}">Update</a>
+                      </td>
+                  </tr>
+              {% endfor %}
+          </table>
+             <div class = "board_dropzone board__dropzone--active"></div>
+         </div>
+      </div>
+      </form> 
+    {% endif %}
+
+    <div class="form">
+        <form action="/main/create" method="POST">
+            <a href="/main/create">Add New Task</a>
+        <form action="auth/logout" method="POST">
+            <a href="auth/logout">Logout</a>
+        </form>
+    </div>
+</div>
+{% endblock %}
